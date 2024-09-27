@@ -1,22 +1,30 @@
 <!DOCTYPE html>
 
-<h1 class="mt-4">Board Register Page</h1>
+<th:block th:replace="~{/layout/basic :: setContent(~{this::content} )}">
 
-<form action="" method="">
-  <div class="form-group">
-    <label >제목</label>
-    <input type="text" class="form-control" name="">
-  </div>
-  <div class="form-group">
-    <label >내용</label>
-    <textarea class="form-control" rows="5" name=""></textarea>
-  </div>
-  <div class="form-group">
-    <label >작성자</label>
-    <input type="text" class="form-control" name="">
-  </div>
+	<th:block th:fragment="content">
 
-  <button type="submit" class="btn btn-primary">등록</button>
-</form>
+		<h1 class="mt-4">Board Register Page</h1>
 
+		<!-- DTO에 데이터가 수집되므로 각 입력필드에 알맞는 name을 지정 -->
+		<form action="/board/register" method="post">
+			<div class="form-group">
+				<label>제목</label> <input type="text" class="form-control"
+					name="title">
+			</div>
+			<div class="form-group">
+				<label>내용</label>
+				<textarea class="form-control" rows="5" name="content"></textarea>
+			</div>
+			<div class="form-group">
+				<label>작성자</label> <input type="text" class="form-control"
+					name="writer">
+			</div>
+
+			<button type="submit" class="btn btn-primary">등록</button>
+		</form>
+
+	</th:block>
+
+</th:block>
 
